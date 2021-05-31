@@ -11,3 +11,12 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
+.navbar-lewagon a {
+ text-decoration: none;
+ color: $light-black;
+  &:hover {
+  text-decoration: none;
+  }
+}
