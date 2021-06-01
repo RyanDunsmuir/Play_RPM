@@ -1,2 +1,19 @@
-<h1>Songs#edit</h1>
-<p>Find me in app/views/songs/edit.html.erb</p>
+<div class="container">
+  <div class="card p-4 m-5 ">
+    <h1>Edit Song</h1>
+
+    <%= simple_form_for @song do |f| %>
+    <%= f.input :song, as: :file %>
+    <%= f.input :title %>
+    <%= f.input :album %>
+    <%= f.input :artist %>
+    
+    <div id="create-song">
+      <%= f.submit class: 'btn btn-danger createsongbtn btn-block m-1' %>
+      <% end %>
+    </div>
+
+    <div id="cancel">  
+      <%= link_to 'Cancel', songs_path, class: "btn btn-secondary btn-block m-1" %>
+    </div>  
+</div>
