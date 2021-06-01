@@ -16,7 +16,10 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     @song.user = current_user
-    if @bookmark.save
+    rand_seed_gen = Faker::Number.number(digits: 8)
+    @song.cover = "https://picsum.photos/seed/#{rand_seed_gen}/600/400"
+
+    if @song.save
       redirect_to song_path(@song)
     else
       render :new

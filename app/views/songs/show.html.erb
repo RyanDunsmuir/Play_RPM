@@ -1,2 +1,7 @@
 <h1>Songs#show</h1>
 <p>Find me in app/views/songs/show.html.erb</p>
+<% audio = @song.song %>
+<audio controls>
+  <source src="<%= audio %>" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
