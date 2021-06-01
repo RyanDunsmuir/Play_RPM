@@ -1,2 +1,9 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
+<h1>Browse Songs</h1>
+
+<%= link_to 'Upload', new_song_path, class: "btn btn-primary" %>
+
+<% @songs.each do |song| %>
+  <%= link_to song_path(song) do %>
+    <p><%= song.title %></p><p> - <%= song.album %></p><p> - <%= song.artist %></p>
+  <% end %>
+<% end %>
