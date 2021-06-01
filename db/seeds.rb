@@ -5,3 +5,28 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Song.destroy_all
+Order.destroy_all
+OrderSong.destroy_all
+User.destroy_all
+
+
+user = User.new
+user.email = 'ryan_dunsmuir@hotmail.co.uk'
+user.password = 'valid_password'
+user.password_confirmation = 'valid_password'
+user.encrypted_password = '#$taawktljasktlw4aaglj'
+user.save!
+
+40.times do
+  rand_seed_gen = Faker::Number.number(digits: 8)
+  title = Faker::Music::Prince.song
+  artist = Faker::Music.band
+  album = Faker::Music.album
+  cover = "https://picsum.photos/seed/#{rand_seed_gen}/600/400"
+  song = Song.new(title: title, artist: artist, album: album, cover: cover, user_id: 1)
+
+  puts "added #{song.title} - #{song.album} - #{song.artist}"
+  song.save
+end
