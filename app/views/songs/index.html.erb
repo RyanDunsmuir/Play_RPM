@@ -10,14 +10,16 @@
   <div class="cards mb-5">
     <% @songs.each do |song| %>
       <div class="card-trip">
-        <%= song.cover %>
+        <%= image_tag song.cover %>
         <div class="card-trip-infos">
           <div>
-            <h2><%= song.title %></h2>
-            <p><%= song.album %></p>
-            <p> <%= song.artist %> </p>
+            <%= link_to song_path(song) do %>
+              <h2><%= song.title %></h2>
+              <p><%= song.album %></p>
+              <p> <%= song.artist %> </p>
+            <% end %>
           </div>
-          <h2 class="card-trip-pricing"><%= song.title %></h2>
+          <h2 class="card-trip-pricing"></h2>
         </div>
       </div>
     <% end %>
