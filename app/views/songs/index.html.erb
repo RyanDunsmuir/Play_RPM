@@ -1,9 +1,26 @@
-<h1>Browse Songs</h1>
+<div class="banner-songs mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
+</div>
 
-<%= link_to 'Upload', new_song_path, class: "btn btn-primary" %>
+<div class="container">
 
-<% @songs.each do |song| %>
-  <%= link_to song_path(song) do %>
-    <p><%= song.title %></p><p> - <%= song.album %></p><p> - <%= song.artist %></p>
-  <% end %>
-<% end %>
+  <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
+    <h1 class="text-center">Browse all songs</h1>
+  </div>
+
+  <div class="cards mb-5">
+    <% @songs.each do |song| %>
+      <div class="card-trip">
+        <%= song.cover %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= song.title %></h2>
+            <p><%= song.album %></p>
+            <p> <%= song.artist %> </p>
+          </div>
+          <h2 class="card-trip-pricing"><%= song.title %></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
