@@ -1,0 +1,44 @@
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+
+.button-main {
+  padding: 0.75em 2em;
+  text-align: center;
+  text-decoration: none;
+  color: $logo-white;
+  border: 2px solid $logo-white;
+  font-size: 24px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: "";
+    background-color: rgba(255,255,255,0.5);
+    height: 100%;
+    width: 3em;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -4.5em;
+    transform: skewX(-45deg) translateX(0);
+    transition: none;
+  }
+  &:hover {
+    background-color: $logo-white;
+    color: $light-black;
+    border-bottom: 4px solid darken($logo-white, 10%);
+    text-decoration: none;
+    &:before {
+      transform: skewX(-45deg) translateX(13.5em);
+     transition: all 0.5s ease-in-out;
+    }
+  }
+}
