@@ -1,2 +1,10 @@
-<h1>Songs#new</h1>
-<p>Find me in app/views/songs/new.html.erb</p>
+<h1>Upload A Song</h1>
+
+<%= simple_form_for @song do |f| %>
+<%= f.input :song, as: :file %>
+<%= f.input :title %>
+<%= f.input :album %>
+<%= f.input :artist %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
+<%= link_to 'Cancel', songs_path, class: "btn btn-danger" %>
