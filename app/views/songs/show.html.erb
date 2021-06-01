@@ -1,7 +1,17 @@
-<h1>Songs#show</h1>
-<p>Find me in app/views/songs/show.html.erb</p>
-<% audio = @song.song %>
-<audio controls>
-  <source src="<%= audio %>" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+<div class="container">
+
+  <div class="song-container m-5">
+    <h1 class="m-3"><strong><%= @song.title %></strong></h1>
+    <h2>Album: <%= @song.album %> </h2>
+    <h2>Artist: <%= @song.artist %></h2>
+    <h4 class="m-4"> <em>A track from </em> <%= @song.user %> </h4>
+    <div class="m-3">
+      <audio controls>
+        <source src="horse.ogg" type="audio/ogg">
+        <source src="horse.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <%= image_tag @song.cover, class: "album-cover mt-4" %>
+  </div>
+
+</div>

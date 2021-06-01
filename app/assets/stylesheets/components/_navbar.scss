@@ -13,6 +13,10 @@
   width: 40px;
 }
 
+.navbar-brand {
+  margin: 0;
+}
+
 .navbar-light .navbar-nav .nav-link {
   color: $logo-white;
   opacity: 0.6;
@@ -20,4 +24,18 @@
     color: $logo-white;
     opacity: 1;
   }
+}
+
+.navbar-light .navbar-brand {
+    color: $logo-white;
+  opacity: 1;
+  &:hover {
+    color: $logo-white;
+    opacity: 1;
+  }
+}
+
+.nav-item {
+  width: 158.83px;
+  text-align: right;
 }
