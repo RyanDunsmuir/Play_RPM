@@ -1,6 +1,6 @@
-<div class='container'>
+<div class='container w-50'>
   <div class="card p-4 m-5">
-    <h2>Forgot your password?</h2>
+    <h2 class="text-center">Forgot your password?</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <%= f.error_notification %>
@@ -13,7 +13,7 @@
       </div>
 
       <div class="form-actions btn btn-secondary btn-lg btn-block">
-        <%= f.button :submit, "Send me reset password instructions" %>
+        <%= f.button :submit, "Reset password" %>
       </div>
     <% end %>
     <div class="signup-link">

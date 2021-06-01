@@ -1,9 +1,9 @@
 
-<div class='container'>
-  <%# <div class="container-login"> %>
-    <div class="card p-4 m-5">
+<div class='container w-50'>
 
-      <h2>Sign up</h2>
+    <div class="card card-big p-4 m-5">
+
+      <h2 class="text-center">Sign up</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -28,8 +28,8 @@
       <% end %>
       
       <div class="signup-link">
-        <%= render "devise/shared/links" %>
+        Already have an account? <%= render "devise/shared/links" %>
       </div>
-    </div>  
-  <%# </div> %>
+    </div>
+
 </div>
