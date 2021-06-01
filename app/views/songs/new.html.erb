@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container w-50">
   <div class="card p-4 m-5 ">
-    <h1>Upload A Song</h1>
+    <h1 class="text-center">Upload A Song</h1>
 
     <%= simple_form_for @song do |f| %>
     <%= f.input :file, as: :file %>
@@ -9,7 +9,7 @@
     <%= f.input :artist %>
     
     <div id="create-song">
-      <%= f.submit class: 'btn btn-danger createsongbtn btn-block m-1' %>
+      <%= f.submit class: 'btn btn-danger createsong btn btn-block m-1' %>
       <% end %>
     </div>
 

@@ -5,13 +5,25 @@
     All songs
   <% end %>
 
-  <%= link_to root_path do %>
+
+  <% if user_signed_in? %>
+    <%= link_to songs_path do %>
     <%= image_tag "text_playrpm", class: "navbar-brand text_logo px-3" %>
+    <% end %>
+  <% else %>
+    <%= link_to root_path do %>
+    <%= image_tag "text_playrpm", class: "navbar-brand text_logo px-3" %>
+    <% end %>
   <% end %>
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
+  <% if user_signed_in? %>
+    <%= link_to "Upload your song!", "/songs/new", class: "upload-button btn btn-danger" %>
+  <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -22,6 +34,8 @@
           <%= link_to "Login", "/users/sign_in", class: "nav-link mr-3" %>
         <% end %>
       </li>
+
+
 
     </ul>
   </div>
