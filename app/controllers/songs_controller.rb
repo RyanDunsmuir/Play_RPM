@@ -1,23 +1,21 @@
 class SongsController < ApplicationController
   before_action :set_song, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, except: %i[new create]
 
   def index
     @songs = Song.all
   end
 
   def show
-    authorize @song
   end
 
   def new
     @song = Song.new
-    authorize @song
   end
 
   def create
     @song = Song.new(song_params)
     @song.user = current_user
-    aithorize @song
     if @bookmark.save
       redirect_to song_path(@song)
     else
@@ -27,7 +25,6 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    authorize @song
 
     redirect_to songs_path, notice: 'Song was successfully removed.'
   end
@@ -36,7 +33,6 @@ class SongsController < ApplicationController
   end
 
   def update
-    authorize @song
     if @song.update(song_params)
       redirect_to @song, notice: "Song was successfully updated."
     else
