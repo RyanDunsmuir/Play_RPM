@@ -17,8 +17,12 @@
               <h2><%= song.title %></h2>
               <p><%= song.album %></p>
               <p> <%= song.artist %> </p>
-              <% file = url_for(song.file.attachment) %>
-              <%= audio_tag("#{file}", autoplay: false, controls: true) %>
+
+              <div class="mx-3 mt-2">
+                <% file = url_for(song.file.attachment) %>
+                <%= audio_tag("#{file}", autoplay: false, controls: true)%>
+              </div>
+
             <% end %>
           </div>
           <h2 class="card-trip-pricing"></h2>
