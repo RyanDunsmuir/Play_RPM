@@ -1,9 +1,11 @@
 <div class="container col-sm-6 col-md-6 col-lg-6 col-xl-6">
   <div class="card p-4 m-5 ">
-    <h1>Edit Song</h1>
+    <h1 class="text-center">Edit Song</h1>
 
     <%= simple_form_for @song do |f| %>
-    <%= f.input :song, as: :file %>
+
+    <%= f.input :file, as: :file, label: 'Audio file'%>
+    <%= f.input :cover_photo, as: :file, label: 'Artwork file' %>
     <%= f.input :title %>
     <%= f.input :album %>
     <%= f.input :artist %>
@@ -14,7 +16,7 @@
     </div>
 
     <div id="cancel">  
-      <%= link_to 'Cancel', songs_path, class: "btn btn-secondary btn-block m-1" %>
+      <%= link_to 'Cancel', song_path(@song), class: "btn btn-secondary btn-block m-1" %>
     </div>  
   </div>
 </div>
