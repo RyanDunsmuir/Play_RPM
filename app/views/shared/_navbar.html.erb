@@ -1,18 +1,18 @@
 <div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
 
   <%= link_to songs_path, id: "left-logo", class: "navbar-brand nav-link" do %>
-    <%= asset_path "logo_playrpm.png" %>
+    <%= image_tag "logo_playrpm.png" %>
     All songs
   <% end %>
 
 
   <% if user_signed_in? %>
     <%= link_to songs_path do %>
-    <%= asset_path "text_playrpm.png", id: "center-logo", class: "navbar-brand text_logo px-3" %>
+    <%= image_tag "text_playrpm.png", id: "center-logo", class: "navbar-brand text_logo px-3" %>
     <% end %>
   <% else %>
     <%= link_to root_path do %>
-    <%= asset_path "text_playrpm.png", id: "center-logo", class: "navbar-brand text_logo px-3" %>
+    <%= image_tag "text_playrpm.png", id: "center-logo", class: "navbar-brand text_logo px-3" %>
     <% end %>
   <% end %>
 
