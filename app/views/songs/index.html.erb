@@ -17,7 +17,11 @@
               <h2><%= song.title %></h2>
               <p><%= song.album %></p>
               <p> <%= song.artist %> </p>
-              <%= render_audio(song) %>
+
+              <div class="mx-3 mt-2">
+                <%= render_audio(song) %>
+              </div>
+
             <% end %>
           </div>
           <h2 class="card-trip-pricing"></h2>
