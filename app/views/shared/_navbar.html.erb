@@ -31,14 +31,14 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <% if user_signed_in? %>
-          <%= link_to "Log out", "/users/sign_out", method: 'delete', class: "nav-link mr-3" %>
+          <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "nav-link mr-3" %>
         <% else %>
-          <%= link_to "Login", "/users/sign_in", class: "nav-link mr-3" %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link mr-3" %>
         <% end %>
       </li>
       <li>
         <% if user_signed_in? %>
-          <%= link_to "Upload your song!", "/songs/new", class: "upload-button btn btn-danger" %>
+          <%= link_to "Upload your song!", new_song_path, class: "upload-button btn btn-danger" %>
         <% end %>
       </li>
 
