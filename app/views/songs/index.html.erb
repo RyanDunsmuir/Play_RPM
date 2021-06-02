@@ -10,7 +10,7 @@
   <div class="cards mb-5">
     <% @songs.each do |song| %>
       <div class="card-trip">
-        <%= image_tag song.cover %>
+        <%= render_photo(song) %>
         <div class="card-trip-infos">
           <div>
             <%= link_to song_path(song) do %>
@@ -19,8 +19,7 @@
               <p> <%= song.artist %> </p>
 
               <div class="mx-3 mt-2">
-                <% file = url_for(song.file.attachment) %>
-                <%= audio_tag("#{file}", autoplay: false, controls: true)%>
+                <%= render_audio(song) %>
               </div>
 
             <% end %>
