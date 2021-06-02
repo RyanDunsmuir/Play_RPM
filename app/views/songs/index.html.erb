@@ -8,7 +8,7 @@
   <h1 class="text-center m-5">Browse all songs</h1>
 
   <div class="cards mb-5">
-    <% @songs.each do |song| %>
+    <% @songs.reverse.each do |song| %>
       <div class="card-trip">
         <%= render_photo(song) %>
         <div class="card-trip-infos">

@@ -4,13 +4,13 @@
     <h1 class="m-3"><strong><%= @song.title %></strong></h1>
     <h2>Album: <%= @song.album %> </h2>
     <h2>Artist: <%= @song.artist %></h2>
-    <h4 class="m-4"> <em>A track from </em> <%= @song.user.username %> </h4>
+    <h4 class="m-4"> <em>A track from  <%= @song.user.username.present? ? @song.user.username : 'Anonymous' %> </em></h4>
     <div class="m-3">
-    <% file = url_for(@song.file.attachment) %>
-    <%= audio_tag("#{file}", autoplay: false, controls: true) %>
-
+    <%= render_audio(@song) %>
     </div>
-    <%= image_tag @song.cover, class: "album-cover mt-4" %>
+    <div class="album-cover mt-4">
+      <%= render_photo(@song) %>
+    </div>
   </div>
 
 </div>
