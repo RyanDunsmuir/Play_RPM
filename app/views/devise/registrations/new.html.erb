@@ -1,5 +1,5 @@
 
-<div class='container w-50'>
+<div class='container col-sm-6 col-md-6 col-lg-6 col-xl-6'>
 
     <div class="card card-big p-4 m-5">
 
@@ -27,6 +27,9 @@
 
         <div class="form-actions btn btn-secondary btn-lg btn-block">
           <%= f.button :submit, "Sign up" %>
+        </div>
+        <div class="cancel-login">
+          <%= link_to 'Cancel', root_path, class: "btn btn-secondary btn-lg btn-block m-0" %>
         </div>
       <% end %>
       
