@@ -3,7 +3,8 @@
     <h1 class="text-center">Upload A Song</h1>
 
     <%= simple_form_for @song do |f| %>
-    <%= f.input :file, as: :file %>
+    <%= f.input :file, as: :file, label: 'Audio file'%>
+    <%= f.input :cover_photo, as: :file, label: 'Artwork file' %>
     <%= f.input :title %>
     <%= f.input :album %>
     <%= f.input :artist %>
