@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  get '/mysongs' => 'pages#mysongs', :as => :user_songs_path
+  get '/profile' => 'pages#profile', :as => :user_profile
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
