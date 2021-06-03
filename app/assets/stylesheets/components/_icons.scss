@@ -1,5 +1,4 @@
-
-.trash_icon {
+.trash-icon {
   font-size: 24px;
   color: $red;
   opacity: 0.6;
@@ -11,7 +10,7 @@
   }
  }
 
-.eye_icon {
+.eye-icon {
   font-size: 24px;
   color: $light-black;
   opacity: 0.6;
@@ -21,4 +20,25 @@
     color: $light-black;
     opacity: 1;
   }
+}
+
+.cart-icon {
+  text-decoration: none;
+  color: $light-black;
+  opacity: 0.6;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  &:hover {
+    color: $light-black;
+    opacity: 1;
+  }
+}
+
+.song-card-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
 }

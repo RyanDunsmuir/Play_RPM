@@ -8,14 +8,19 @@
     <div class="m-3">
     <%= render_audio(@song) %>
     </div>
-    <div class="button-box">
-      <%= link_to 'Back', songs_path, class: "btn btn-secondary" %>
-      <%= link_to 'Add To Cart', order_songs_path(song_id: @song), method: :post, class: "btn btn-success"  %>
-      <%= link_to 'Delete', song_path(@song), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this masterpiece?"} if current_user == @song.user %>
-      <%= link_to 'Edit', edit_song_path(@song), class: "btn btn-primary" if current_user == @song.user %>
-    </div>
+
     <div class="album-cover mt-4">
       <%= render_photo(@song) %>
+    </div>
+
+    <div class="button-box mt-4">
+      <%= link_to 'Back', songs_path, class: "mr-3 btn btn-secondary" %>
+      <%= link_to order_songs_path(song_id: @song), method: :post, class: "btn btn-danger" do %>
+        Add To Cart <i class="fas fa-cart-plus"></i>
+      <% end %>
+
+      <%= link_to 'Delete', song_path(@song), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure you want to delete this masterpiece?"} if current_user == @song.user %>
+      <%= link_to 'Edit', edit_song_path(@song), class: "btn btn-primary" if current_user == @song.user %>
     </div>
   </div>
 
