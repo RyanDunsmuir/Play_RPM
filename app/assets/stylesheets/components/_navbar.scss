@@ -26,6 +26,27 @@
   }
 }
 
+.navbar-nav-mobile {
+  list-style-type: none;
+  text-align: right;
+  color: $logo-white;
+  opacity: 0.6;
+  &:hover {
+    color: $logo-white;
+    opacity: 1;
+  }
+}
+
+.nav-link-mobile {
+  color: $logo-white;
+  opacity: 0.6;
+  margin: auto;
+  &:hover {
+    color: $logo-white;
+    opacity: 1;
+  }
+}
+
 .navbar-light .navbar-brand {
     color: $logo-white;
   opacity: 1;
@@ -40,12 +61,17 @@
   text-align: right;
 }
 
+.nav-item-mobile {
+  width: 158.83px;
+  text-align: left;
+}
+
 .username-navbar {
-  position: absolute;
-  left: 180px;
+  position: relative;
+  left: 0px;
   letter-spacing: 2px;
   margin-bottom: 5px;
-}
+  }
 
 #center-logo {
   opacity: 0.7;
@@ -61,4 +87,57 @@
   }
 }
 
+.icon_greeting {
+  display: flex;
+}
 
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+.mobile-nav {
+ visibility: visible;  
+ }
+ .desktop-nav {
+  visibility: hidden;  
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+.mobile-nav {
+ visibility: visible;  
+ }
+ .desktop-nav {
+  visibility: hidden;  
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .mobile-nav {
+    visibility: visible;  
+  }
+  .desktop-nav {
+    visibility: hidden;  
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .mobile-nav {
+    visibility: hidden;  
+  }
+  .desktop-nav {
+    visibility: visible;  
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .mobile-nav {
+    visibility: hidden;  
+  }
+  .desktop-nav {
+    visibility: visible;  
+  }
+}
