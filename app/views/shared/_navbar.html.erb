@@ -1,9 +1,9 @@
-<div class="navbar sticky-top navbar-expand-sm navbar-light navbar-lewagon">
-
-  <%= link_to songs_path, id: "left-logo", class: "navbar-brand nav-link" do %>
-    <%= image_tag "logo_playrpm.png" %>
-    All songs
-  <% end %>
+<div class="navbar sticky-top navbar-light navbar-lewagon mobile-nav">
+  <div class='left_icon_text d-flex'>
+        <%= link_to songs_path, id: "left-logo", class: "navbar-brand nav-link" do %>
+          <%= image_tag "logo_playrpm.png" %>
+        <% end %>
+  </div>
 
 
   <% if user_signed_in? %>
@@ -16,9 +16,79 @@
     <% end %>
   <% end %>
 
-  <% if user_signed_in?  %>
-    <p class="username-navbar"> //  Hello, <%= current_user.username %> :)</p>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav-mobile mr-auto">
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to new_song_path, class: "nav-link-mobile mr-3" do %>
+            <i class="fas fa-shopping-cart"></i> Cart
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to  songs_path, class: "nav-link-mobile mr-3" do %>
+            <i class="fas fa-user"></i> Profile
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to  new_song_path, class: "nav-link-mobile mr-3" do %>
+            <i class="fas fa-music"></i> Upload
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "nav-link-mobile mr-3" %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link-mobile mr-3" %>
+        <% end %>
+      </li>
+
+
+    </ul>
+  </div>
+</div>
+
+<div class="navbar sticky-top navbar-expand-md navbar-light navbar-lewagon desktop-nav">
+  <div class='left_icon_text d-flex'>
+    <ul class="navbar-nav mr-auto">
+      <li class="icon_greeting">
+        <%= link_to songs_path, id: "left-logo", class: "navbar-brand nav-link" do %>
+          <%= image_tag "logo_playrpm.png" %>
+        <% end %>
+      </li>
+      <li>
+      <% if user_signed_in?  %>
+        <div class="collapse navbar-collapse" id="hello">
+          <p class="username-navbar"> //  Hello, <%= current_user.username %> :)</p>
+        </div>
+      <% end %> 
+      </li>
+    </ul>
+  </div>
+
+
+  <% if user_signed_in? %>
+    <%= link_to songs_path do %>
+    <%= image_tag "text_playrpm.png", id: "center-logo", class: "navbar-brand text_logo px-3" %>
+    <% end %>
+  <% else %>
+    <%= link_to root_path do %>
+    <%= image_tag "text_playrpm.png", id: "center-logo", class: "navbar-brand text_logo px-3" %>
+    <% end %>
   <% end %>
+
 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +109,7 @@
       </li>
       <li>
         <% if user_signed_in? %>
-          <%= link_to "Upload your track", "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "upload-button btn btn-danger" %>
+          <%= link_to "Upload", "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "upload-button btn btn-danger" %>
         <% end %>
       </li>
 
