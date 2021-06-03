@@ -95,49 +95,49 @@
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
 .mobile-nav {
- visibility: visible;  
+ display: flex;
  }
  .desktop-nav {
-  visibility: hidden;  
+  display: none;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 .mobile-nav {
- visibility: visible;  
+ display: flex;
  }
  .desktop-nav {
-  visibility: hidden;  
+  display: none;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .mobile-nav {
-    visibility: visible;  
+    display: flex;
   }
   .desktop-nav {
-    visibility: hidden;  
+    display: none;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .mobile-nav {
-    visibility: hidden;  
+    display: none;
   }
   .desktop-nav {
-    visibility: visible;  
+    display: flex;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .mobile-nav {
-    visibility: hidden;  
+    display: none;
   }
   .desktop-nav {
-    visibility: visible;  
+    display: flex;
   }
 }
