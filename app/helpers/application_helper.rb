@@ -25,4 +25,14 @@ module ApplicationHelper
       audio_tag("https://res.cloudinary.com/ryanthewizard/video/upload/v1622630872/0rso2o8ck371zccvi59qzsphpui8.mp3", autoplay: false, controls: true)
     end
   end
+
+  def profile_greeting
+    case Time.zone.now.hour
+    when 4..11 then 'Bom dia'
+    when 12..17 then 'Boa tarde'
+    when 18..23 then 'Boa noite'
+    else
+      'Olá'
+    end
+  end
 end

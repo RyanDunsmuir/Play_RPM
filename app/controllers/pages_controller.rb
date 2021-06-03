@@ -4,9 +4,8 @@ class PagesController < ApplicationController
   def home
   end
 
-  def mysongs
-      @user = current_user
-      @songs = @user.songs.all
+  def profile
+    @user = current_user
+    @songs = @user.songs.all
   end
-
 end
