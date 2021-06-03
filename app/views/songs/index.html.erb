@@ -16,12 +16,13 @@
             <%= link_to song_path(song) do %>
               <h2><%= song.title %></h2>
               <p><%= song.album %></p>
-              <p> <%= song.artist %> </p>
-
+              <p><%= song.artist %></p>
               <div class="mx-3 mt-2">
                 <%= render_audio(song) %>
               </div>
-
+              <%= link_to order_songs_path(song_id: song), method: :post, class: "song_card_btn" do %>
+                <i class="fas fa-cart-plus"></i>
+              <% end %>
             <% end %>
           </div>
           <h2 class="card-trip-pricing"></h2>
