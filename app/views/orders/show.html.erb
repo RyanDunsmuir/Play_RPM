@@ -1,2 +1,26 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530288782965-fbad40327074?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);">
+  <div class="container">
+    <h1 class="pt-5">Your Order</h1>
+    <p>ID#<%= @order.id %></p>
+    <div class="order_item_cards">
+      <ul>
+        <% @order.order_songs.each do |item| %>
+          <li>
+            <div class="order_item_card">
+              <%= render_cart_photo(item.song) %>
+              <h2><%= item.song.title %></h2>
+              <div class="cart_item_buttons">
+                <%= link_to 'View', song_path(item.song), class: "btn btn-primary mr-1" %>
+                <%= link_to 'Remove', order_song_path(item), method: :delete, class: "btn btn-danger" %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="">
+      <%= link_to 'View Songs', songs_path, class: "btn btn-primary"  %>
+      <%= link_to 'Checkout', order_path(@order), method: :patch, class: "btn btn-success"  %>
+    </div>
+  </div>
+</div>

@@ -16,9 +16,8 @@ Rails.application.routes.draw do
   # get 'songs/update'
 
   resources :songs
-  resources :orders, only: %i[create show update destroy] do
-    resources :order_songs, only: %i[create]
-  end
+  resources :orders, only: %i[create show update destroy]
+  resources :order_songs, only: %i[create]
   resources :order_songs, only: %i[destroy]
   devise_for :users
   root to: 'pages#home'
