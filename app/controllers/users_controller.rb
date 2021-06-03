@@ -4,4 +4,6 @@ class UsersController < ApplicationController
 
   def authentication
   end
+
+
 end

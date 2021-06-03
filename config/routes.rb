@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   resources :order_songs, only: %i[destroy]
   devise_for :users
   root to: 'pages#home'
+
+  get '/mysongs' => 'pages#mysongs', :as => :user_songs_path
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
