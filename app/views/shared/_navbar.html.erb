@@ -27,18 +27,19 @@
 
 
 
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <% if user_signed_in? %>
           <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "nav-link mr-3" %>
         <% else %>
-          <%= link_to "Login", new_user_session_path, class: "nav-link mr-3" %>
+          <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal"}, class: "nav-link mr-3" %>
         <% end %>
       </li>
       <li>
         <% if user_signed_in? %>
-          <%= link_to "Upload your song!", new_song_path, class: "upload-button btn btn-danger" %>
+          <%= link_to "Upload your track", "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "upload-button btn btn-danger" %>
         <% end %>
       </li>
 
@@ -46,3 +47,7 @@
     </ul>
   </div>
 </div>
+
+<%= render 'shared/upload_song_form' %>
+
+<%= render 'shared/login_form' %>

@@ -19,6 +19,8 @@ Devise.setup do |config|
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = [:"*/*", "*/*", :html, :js]
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
