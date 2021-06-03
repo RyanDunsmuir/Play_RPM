@@ -68,9 +68,14 @@
   margin: 0;
 }
 
-.card-trip a {
+.song-title {
   text-decoration: none;
   color: $light-black;
+  &:hover {
+    color: $light-black;
+    text-decoration: none;
+    opacity: 0.6;
+  }
 }
 
 .card-trip .card-trip-infos {
@@ -79,6 +84,7 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-decoration: none;
 }
 
 .card-trip-infos .card-trip-user {

@@ -5,7 +5,8 @@
 
 <!--   <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
   </div> -->
-  <h1 class="text-center m-5">Browse all songs</h1>
+  <h1 class="text-center mt-5">All songs on Play RPM</h1>
+  <p class="text-center mb-5 mt-4" style="opacity: 0.6;"><em>We currently have <%= @songs.count %> songs... and growing</em></p>
 
   <div class="cards mb-5">
     <% @songs.reverse.each do |song| %>
@@ -13,15 +14,15 @@
         <%= render_photo(song) %>
         <div class="card-trip-infos">
           <div>
-            <%= link_to song_path(song) do %>
+            <%= link_to song_path(song), class:  "song-title" do %>
               <h2><%= song.title %></h2>
               <p><%= song.album %></p>
               <p><%= song.artist %></p>
-              <div class="mx-3 mt-2">
+              <div class="mx-3 mt-3">
                 <%= render_audio(song) %>
               </div>
-              <%= link_to order_songs_path(song_id: song), method: :post, class: "song_card_btn" do %>
-                <i class="fas fa-cart-plus"></i>
+              <%= link_to order_songs_path(song_id: song), method: :post, class: "song-card-btn cart-icon" do %>
+                <i class="cart-icon fas fa-cart-plus"></i>
               <% end %>
             <% end %>
           </div>

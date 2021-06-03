@@ -11,9 +11,9 @@ module ApplicationHelper
   def render_cart_photo(song)
     if song.cover_photo.attached?
       # photo_link = url_for(song.cover_photo.attachment)
-      cl_image_tag song.cover_photo.key, height: 100, width: 100, crop: :fill, class: "order_image"
+      cl_image_tag song.cover_photo.key, height: 100, width: 100, crop: :fill, class: "order-image"
     else
-      cl_image_tag song.cover, height: 100, width: 100, crop: :fill, class: "order_image"
+      cl_image_tag song.cover, height: 100, width: 100, crop: :fill, class: "order-image"
     end
   end
 
