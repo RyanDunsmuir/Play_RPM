@@ -116,21 +116,21 @@
       </li>
       <li class='navbar-icons-desktop' >
         <% if user_signed_in? %>
-          <%= link_to  "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "profile-button btn btn-danger btn-sm" do %>
+          <%= link_to  songs_path, class: "profile-button btn btn-danger btn-sm" do %>
             <i class="fas fa-music"></i>
           <% end %>
         <% end %>
       </li>
       <li class='navbar-icons-desktop'>
         <% if user_signed_in? %>
-          <%= link_to "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "cart-button btn btn-danger btn-sm"  do %>
+          <%= link_to define_cart_link, class: "cart-button btn btn-danger btn-sm"  do %>
             <i class="fas fa-shopping-cart"></i>
           <% end %>
         <% end %>
       </li>
       <li class='navbar-icons-desktop'>
         <% if user_signed_in? %>
-          <%= link_to "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "home-button btn btn-danger btn-sm" do %>
+          <%= link_to user_account_path, class: "home-button btn btn-danger btn-sm" do %>
             <i class="fas fa-home"></i>
           <% end %>
         <% end %>
