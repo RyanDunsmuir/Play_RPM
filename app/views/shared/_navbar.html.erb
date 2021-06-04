@@ -71,16 +71,9 @@
   <div class='left_icon_text d-flex'>
     <ul class="navbar-nav mr-auto">
       <li class="icon_greeting">
-        <%= link_to songs_path, id: "left-logo", class: "navbar-brand nav-link" do %>
+        <%= link_to songs_path, id: "left-logo", class: "navbar-brand nav-link nav-widener" do %>
           <%= image_tag "logo_playrpm.png" %>
         <% end %>
-      </li>
-      <li>
-      <% if user_signed_in?  %>
-        <div class="collapse navbar-collapse" id="hello">
-          <p class="username-navbar"> //  Hello, <%= current_user.username %> :)</p>
-        </div>
-      <% end %> 
       </li>
     </ul>
   </div>

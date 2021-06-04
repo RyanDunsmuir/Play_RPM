@@ -6,29 +6,33 @@
   <h2 class="my-3 mt-4">My Songs</h2>
   <div class="d-flex align-items-center justify-content-between mb-3 mt-3">
   </div>
+  <% if current_user.songs.length == 0 %>
+    <p>You have no songs!</p>
+    <%= link_to 'Upload first song!', new_song_path, class: "btn btn-primary my-4" %>
+  <% else %>
+    <div class="cards mb-5">
+      <% @songs.reverse.each do |song| %>
+        <div class="card-trip">
+          <%= render_photo(song) %>
+          <div class="card-trip-infos">
+            <div>
+              <%= link_to song_path(song) do %>
+                <h2><%= song.title %></h2>
+                <p><%= song.album %></p>
+                <p> <%= song.artist %> </p>
 
-  <div class="cards mb-5">
-    <% @songs.reverse.each do |song| %>
-      <div class="card-trip">
-        <%= render_photo(song) %>
-        <div class="card-trip-infos">
-          <div>
-            <%= link_to song_path(song) do %>
-              <h2><%= song.title %></h2>
-              <p><%= song.album %></p>
-              <p> <%= song.artist %> </p>
+                <div class="mx-3 mt-2">
+                  <%= render_audio(song) %>
+                </div>
 
-              <div class="mx-3 mt-2">
-                <%= render_audio(song) %>
-              </div>
-
-            <% end %>
+              <% end %>
+            </div>
+            <h2 class="card-trip-pricing"></h2>
           </div>
-          <h2 class="card-trip-pricing"></h2>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 
 </div>
 
@@ -40,7 +44,7 @@
   </div>
 
   <div class="cards mb-5">
-    <% current_user.orders.each do |order| %>
+    <% current_user.orders.reverse.each do |order| %>
       <div class="card-trip">
         <div class="order-status-banner">
           <% if order.status == 'processing' %>
@@ -61,7 +65,7 @@
             <% end %>
             <hr>
             <% order.order_songs.each_with_index do |ordersong, index| %>
-              <p class="mb-2"> <%= index + 1 %> - <%= ordersong.song.title %> </p>
+              <p class="mb-2"> <%= index + 1 %> - <%= link_to ordersong.song.title, song_path(ordersong.song) %> </p>
             <% end %>
 
           </div>
