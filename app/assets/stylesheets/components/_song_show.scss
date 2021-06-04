@@ -19,3 +19,23 @@
 
   }
 }
+
+.user-buttons {
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.button-box {
+ display: flex;
+ width: 400px;
+ flex-grow: 1;
+ object-fit: fill;
+ justify-content: center;
+ margin: 0 auto;
+}
+
+.back-button {
+  width: 40px;
+}

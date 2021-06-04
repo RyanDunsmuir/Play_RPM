@@ -44,4 +44,13 @@ module ApplicationHelper
       'Olá'
     end
   end
+
+  def define_cart_link
+    if current_user.orders.find_by(status: "processing").present?
+      order_path(current_user.orders.find_by(status: "processing"))
+    else
+      new_order = Order.create(user: current_user)
+      order_path(new_order)
+    end
+  end
 end
