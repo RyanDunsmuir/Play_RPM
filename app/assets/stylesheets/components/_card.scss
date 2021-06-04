@@ -93,3 +93,11 @@
   top: -20px;
   width: 40px;
 }
+
+.card-trip-infos a {
+  color: rgb(50,50,50);
+  text-decoration: none;
+  &:hover {
+  text-decoration: none;
+  }
+}

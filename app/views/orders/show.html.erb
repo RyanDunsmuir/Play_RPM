@@ -10,10 +10,13 @@
           <li>
               <div class="order-item-card">
                 <%= render_cart_photo(item.song) %>
-                <h2><%= item.song.title %></h2>
-                <p> <%= item.song.album %> </p>
-                <p> <%= item.song.artist %> </p>
-                <div class="cart-item-buttons">
+                <div class="order-card-text">
+                  <h2><%= item.song.title %></h2>
+                  <hr>
+                  <p> <%= item.song.album %></p>
+                  <p> <%= item.song.artist %></p>
+                </div>
+                <div class="cart-item-buttons mr-3">
                   <%= link_to song_path(item.song), class: "eye-icon" do %>
                     <i class="fas fa-eye"></i>
                   <% end %>
