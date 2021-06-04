@@ -17,6 +17,15 @@ module ApplicationHelper
     end
   end
 
+  def render_acc_phots(song)
+    if song.cover_photo.attached?
+      # photo_link = url_for(song.cover_photo.attachment)
+      cl_image_tag song.cover_photo.key, height: 100, width: 100, crop: :fill, class: "order-artworks"
+    else
+      cl_image_tag song.cover, height: 100, width: 100, crop: :fill, class: "order-artworks"
+    end
+  end
+
   def render_audio(song)
     # audio_file = url_for(song.file.attachment)
     if song.file.attached?
