@@ -29,6 +29,20 @@
       <li>
         <% if user_signed_in? %>
           <%= link_to new_song_path, class: "nav-link-mobile mr-3" do %>
+            <i class="fas fa-plus"></i> Upload
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to  songs_path, class: "nav-link-mobile mr-3" do %>
+            <i class="fas fa-music"></i> All Songs
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to  songs_path, class: "nav-link-mobile mr-3" do %>
             <i class="fas fa-shopping-cart"></i> Cart
           <% end %>
         <% end %>
@@ -36,14 +50,7 @@
       <li>
         <% if user_signed_in? %>
           <%= link_to  songs_path, class: "nav-link-mobile mr-3" do %>
-            <i class="fas fa-user"></i> Profile
-          <% end %>
-        <% end %>
-      </li>
-      <li>
-        <% if user_signed_in? %>
-          <%= link_to  new_song_path, class: "nav-link-mobile mr-3" do %>
-            <i class="fas fa-music"></i> Upload
+             <i class="fas fa-home"></i> Home
           <% end %>
         <% end %>
       </li>
@@ -100,16 +107,39 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+      <li class='navbar-icons-desktop' >
+        <% if user_signed_in? %>
+          <%= link_to "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "upload-button btn btn-danger btn-sm" do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        <% end %>
+      </li>
+      <li class='navbar-icons-desktop' >
+        <% if user_signed_in? %>
+          <%= link_to  "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "profile-button btn btn-danger btn-sm" do %>
+            <i class="fas fa-music"></i>
+          <% end %>
+        <% end %>
+      </li>
+      <li class='navbar-icons-desktop'>
+        <% if user_signed_in? %>
+          <%= link_to "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "cart-button btn btn-danger btn-sm"  do %>
+            <i class="fas fa-shopping-cart"></i>
+          <% end %>
+        <% end %>
+      </li>
+      <li class='navbar-icons-desktop'>
+        <% if user_signed_in? %>
+          <%= link_to "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "home-button btn btn-danger btn-sm" do %>
+            <i class="fas fa-home"></i>
+          <% end %>
+        <% end %>
+      </li>
+      <li class='navbar-icons-desktop logout-desktop'>
         <% if user_signed_in? %>
           <%= link_to "Log out", destroy_user_session_path, method: 'delete', class: "nav-link mr-3" %>
         <% else %>
           <%= link_to "Login", "", data: {toggle: "modal", target: ".bd-example-modal"}, class: "nav-link mr-3" %>
-        <% end %>
-      </li>
-      <li>
-        <% if user_signed_in? %>
-          <%= link_to "Upload", "", data: {toggle: "modal", target: ".uploadsong_bd-example-modal"}, class: "upload-button btn btn-danger" %>
         <% end %>
       </li>
 

@@ -91,6 +91,22 @@
   display: flex;
 }
 
+.navbar-icons-desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 2px;
+  opacity: 0.7;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.logout-desktop {
+  margin-left: 12px;
+  margin-right: 0ex;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
