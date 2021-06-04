@@ -1,0 +1,30 @@
+.download-links-container ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.download-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.download-links h3{
+  align-items: center;
+  font-size: 1.60rem;
+}
+
+.download-icon {
+  color: $light-black;
+  opacity: 0.6;
+  font-size: 1.60rem;
+  &:hover {
+    color: $light-black;
+    opacity: 1;
+  }
+}
+
+.instruction-download {
+  margin-bottom: 24px;
+}
