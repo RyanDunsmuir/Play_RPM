@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
     #redirect to index page
     @order = Order.find(params[:id])
     @order.status = "completed"
+    @order.save
     redirect_to songs_path
   end
-
 end

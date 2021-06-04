@@ -16,4 +16,5 @@ class OrderSongsController < ApplicationController
     @order_song.destroy
     redirect_to order_path, notice: 'Song was successfully removed.'
   end
+
 end
