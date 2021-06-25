@@ -1,1 +1,1 @@
-Play RPM web app for musicians to upload songs. Made with the Rails framework. by Tiago Castro, Ryan Dunsmuir and Lucas Torres at Le Wagon Lisbon.
+Play RPM is a web app for musicians to upload songs. It was made with the Ruby on Rails framework by Tiago Castro, Ryan Dunsmuir and Lucas Leite at Le Wagon Lisbon as part of the AirBnB clone project.
